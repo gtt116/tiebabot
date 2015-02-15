@@ -4,7 +4,10 @@ from bs4 import BeautifulSoup
 
 class Tieba(object):
 
-    url = 'http://tieba.baidu.com/f?kw=apink&ie=utf-8&pn=%(page)s'
+    url = 'http://tieba.baidu.com/f?kw=%(name)s&ie=utf-8&pn=%(page)s'
+
+    def __init__(self, name):
+        self.name = name
 
     def read_page(self, page_number):
         """Returns the unicode of html content."""
@@ -16,10 +19,11 @@ class Tieba(object):
         page = (int(page_number) - 1) * 50
         if page < 0:
             page = 0
-        return self.url % {'page': page}
+
+        return self.url % {'page': page, 'name': self.name}
 
 
-class BaseItem(object):
+class TiebaModel(object):
     root_url = 'http://tieba.baidu.com'
 
     def __init__(self, reply_number, title, last_replier, author, link):
@@ -76,7 +80,7 @@ class Parser(object):
         except TypeError:
             link = ''
 
-        real_item = BaseItem(reply_number, title, author, replier, link)
+        real_item = TiebaModel(reply_number, title, author, replier, link)
         real_item.raw_html = unicode(item)
         return real_item
 
@@ -86,19 +90,3 @@ class Sorder(object):
     @staticmethod
     def sort(items):
         return sorted(items, key=lambda x: x.title, reverse=True)
-
-
-if __name__ == '__main__':
-    parser = Parser()
-    tieba = Tieba()
-
-    all_threads = []
-    for no in xrange(1, 4):
-        page_content = tieba.read_page(no)
-        rest = parser.parse(page_content, 'utf8')
-        all_threads.extend(rest)
-
-    sorted_rest = Sorder.sort(all_threads)
-
-    import render
-    render.render_to_file('base.html', 'apink.html', threads=sorted_rest)
