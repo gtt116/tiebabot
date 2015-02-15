@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <title>{{ title }}</title>
+  </head>
+
+
+  <body>
+    <ul>
+      {% for thread in threads %}
+      <li>
+        <a href="{{thread.link}}">{{ thread.title}}</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
