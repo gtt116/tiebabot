@@ -1,10 +1,28 @@
 <html>
   <head>
     <title>{{ title }}</title>
+    <meta charset="UTF-8">
+    <style>
+    li {
+      list-style-type: none;
+      display: block;
+      height: 26px;
+      width: 600px;
+      border-bottom: 2px solid #eee;
+      color: #fff;
+    }
+    
+    li a {
+      text-decoration: none;
+    }
+    
+    li a:hover {
+      text-decoration: underline;
+    }
+    </style>
   </head>
-
-
   <body>
+    <div><span>Updated at: {{ updated_at }}</span></div>
     <ul>
       {% for thread in threads %}
       <li>
