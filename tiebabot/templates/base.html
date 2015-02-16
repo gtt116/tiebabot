@@ -5,10 +5,6 @@
     <style>
     li {
       list-style-type: none;
-      display: block;
-      height: 26px;
-      width: 600px;
-      border-bottom: 2px solid #eee;
       color: #fff;
     }
     
@@ -26,7 +22,7 @@
     <ul>
       {% for thread in threads %}
       <li>
-        <a href="{{thread.link}}">{{ thread.title}}</span>
+        <a target="_blank" href="{{thread.link}}">{{ thread.title}}</span>
       </li>
       {% endfor %}
     </ul>
