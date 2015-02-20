@@ -8,3 +8,14 @@ body {
   padding: 6px 0px;
   border-bottom: 1px solid #eee;
 }
+
+.refresh {
+  background: url("/img/refresh.png") no-repeat;
+  background-size: 30px;
+  height: 30px;
+  width: 30px;
+  display: block;
+  position: fixed;
+  right: 20px;
+  bottom: 10px;
+}

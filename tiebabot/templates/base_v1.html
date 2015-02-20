@@ -17,7 +17,7 @@
     <![endif]-->
   </head>
   <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -41,14 +41,16 @@
     <div class="container">
 
       {% for thread in threads %}
-      <a target="_blank" href="{{ thread.link }}">
-        <div class="row thread">
-          {{ thread.title }}
-        </div><!-- row-->
-      </a>
+      <div class="tieba">
+        <a target="" href="{{ thread.link }}">
+          <div class="row thread">
+            {{ thread.title }}
+          </div><!-- row-->
+        </a>
+      </div>
       {% endfor %}
     </div><!-- /.container -->
-
+    <a class="refresh" href="javascript:location.reload();"></a>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="/js/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
