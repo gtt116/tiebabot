@@ -38,14 +38,12 @@
       </div>
     </nav>
 
-    <div class="container">
+    <div class="container background">
 
       {% for thread in threads %}
       <div class="tieba">
         <a target="" href="{{ thread.link }}">
-          <div class="row thread">
             {{ thread.title }}
-          </div><!-- row-->
         </a>
       </div>
       {% endfor %}

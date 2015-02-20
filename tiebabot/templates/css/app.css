@@ -2,13 +2,20 @@ body {
 	padding-top: 50px;
 }
 
-.thread {
-  color: #424242;
+.tieba{
+  margin: 8px 0;
   font-size: medium;
-  margin: 0px 0px 0px;
-  padding: 6px 0px;
-  border-bottom: 1px solid #eee;
+  padding: 5px 0px 5px 5px;
+  /* border: 1px solid #eee; */
+  background: #fff;
+  box-shadow: 1px 1px 3px #BBB;
+  border-radius: 3px;
 }
+
+.background {
+  background: #efefef;
+}
+
 
 .refresh {
   background: url("/img/refresh.png") no-repeat #F0F0F0;
@@ -18,14 +25,14 @@ body {
   width: 45px;
   display: block;
   position: fixed;
-  right: 5px;
-  bottom: 10px;
+  right: 5%;
+  bottom: 30%;
   margin: 10px;
   border-radius: 5px;
   z-index: 21;
   box-shadow: 0px 1px 1px #5F5E5E;
 }
 
-.refresh:hover, .refresh:active, .refresh:focus {
+.refresh:hover .refresh:active .refresh:focus {
   background-color: #f8f8f8;
 }
