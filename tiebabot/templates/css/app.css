@@ -3,6 +3,7 @@ body {
 }
 
 .thread {
+  color: #424242;
   font-size: medium;
   margin: 0px 0px 0px;
   padding: 6px 0px;
@@ -10,12 +11,21 @@ body {
 }
 
 .refresh {
-  background: url("/img/refresh.png") no-repeat;
+  background: url("/img/refresh.png") no-repeat #F0F0F0;
+  background-position: center;
   background-size: 30px;
-  height: 30px;
-  width: 30px;
+  height: 45px;
+  width: 45px;
   display: block;
   position: fixed;
-  right: 20px;
+  right: 5px;
   bottom: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  z-index: 21;
+  box-shadow: 0px 1px 1px #5F5E5E;
+}
+
+.refresh:hover, .refresh:active, .refresh:focus {
+  background-color: #f8f8f8;
 }
