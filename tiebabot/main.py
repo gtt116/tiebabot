@@ -47,7 +47,7 @@ class Scraper(object):
 
     def sort(self, threads):
         LOG.debug("Sorting threads.")
-        return scraper.Sorder.sort(threads)
+        return scraper.IdSorder.sort(threads)
 
     def dump_to_file(self, threads, name):
         LOG.debug("Dump to files.")

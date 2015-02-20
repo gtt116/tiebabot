@@ -37,7 +37,11 @@ class TiebaModel(object):
 
     @property
     def link(self):
-        return self.root_url + '/' + self._link
+        return self.root_url + '/' + self._link + "?see_lz=1"
+
+    @property
+    def id(self):
+        return self._link.split('/')[-1]
 
     def __repr__(self):
         return "<Item %s>" % self.title.encode('utf8')
@@ -90,3 +94,10 @@ class Sorder(object):
     @staticmethod
     def sort(items):
         return sorted(items, key=lambda x: x.title, reverse=True)
+
+
+class IdSorder(object):
+
+    @staticmethod
+    def sort(items):
+        return sorted(items, key=lambda x: x.id, reverse=True)
