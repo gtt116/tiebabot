@@ -61,5 +61,5 @@ class Scraper(object):
 if __name__ == '__main__':
     logging.basicConfig()
     LOG.setLevel(logging.DEBUG)
-    titles = [u'apink', u'郑恩智', u'supergirls', u'2pm组合']
+    titles = [u'apink', u'郑恩智', u'supergirls']
     Scraper(titles, TARGET_DIR, 'base_v1.html').process()
