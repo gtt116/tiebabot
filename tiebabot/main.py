@@ -51,7 +51,7 @@ class Scraper(object):
 
     def dump_to_file(self, threads, name):
         LOG.debug("Dump to files.")
-        now = util.now_unicode()
+        now = util.now_short()
         target = os.path.join(self.target_dir, '%s.html' % name)
         render.render_to_file(self.template_name, target,
                               threads=threads, title=name,
@@ -61,5 +61,5 @@ class Scraper(object):
 if __name__ == '__main__':
     logging.basicConfig()
     LOG.setLevel(logging.DEBUG)
-    titles = [u'apink', u'郑恩智', u'supergirls']
-    Scraper(titles, TARGET_DIR, 'base_v1.html').process()
+    titles = [u'apink', u'郑恩智', u'尹宝美', u'朴初珑', u'exo']
+    Scraper(titles, TARGET_DIR, 'base_v2.html').process()

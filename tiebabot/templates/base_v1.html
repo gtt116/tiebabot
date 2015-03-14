@@ -17,7 +17,7 @@
     <![endif]-->
   </head>
   <body>
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -41,17 +41,37 @@
     <div class="container-fluid background">
 
       {% for thread in threads %}
-      <div class="tieba">
-        <a target="" href="{{ thread.link }}">
-            {{ thread.title }}
-        </a>
-      </div>
+      <a class="tieba" target="" href="{{ thread.link }}">
+          {{ thread.title }}
+      </a>
       {% endfor %}
     </div><!-- /.container -->
-    <a class="refresh" href="javascript:location.reload();"></a>
+    <a class="refresh" id="refresh" href="javascript:"></a>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="/js/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/js/bootstrap.min.js"></script>
+    <script>
+    $(function() {
+      $('#refresh').click(function(event) {
+          $("html, body").animate(
+            { scrollTop: "0px" },
+            { 
+              complete: function(){
+                javascript:location.reload();
+              }
+            }
+          );
+        });
+
+      $('.tieba').bind('touchstart', function() {
+        $(this).addClass('hover');  
+      });
+
+      $('.tieba').bind('touchend', function() {
+        $(this).removeClass('hover');  
+      });
+    });
+    </script>
   </body>
 </html>

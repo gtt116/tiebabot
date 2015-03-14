@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{title|title}} - tiebabot</title>
+
+  <style>
+  *{
+    padding: 0px;
+    margin: 0px;
+  }
+  .container {
+    width:96%;
+    margin: 0 auto;
+  }
+  a{
+    color: black;
+    text-decoration: none;
+  }
+  a:visited{
+    color:#888;
+  }
+  body{
+    font-size:14px;
+  }
+
+  #nav {
+    margin-top:2px;
+    list-style-type: none;
+  }
+
+  #nav li {
+    display: block;
+    float:left;
+    padding: 6px 8px 4px;
+  }
+
+  #nav .active {
+    background: #FC79EB;
+    border-top-left-radius: 6px 6px;
+    border-top-right-radius: 6px 6px;
+  }
+  #nav .active a{
+    color:#fff;
+  }
+
+  #header {
+    background: #FC79EB;
+    padding: 10px 0;
+    text-align: center;
+    color:#fff;
+  }
+
+  #header .key{
+    font-weight: bold;
+    font-size:16px;
+  }
+
+  #header .time{
+    float:right;
+    margin-top:2px;
+  }
+
+
+  #content{
+    border-top: 1px solid #eee;
+  }
+  #content:after{
+    clear:both;
+  }
+
+  .item {
+    border-bottom:1px solid #eee;
+    padding:12px 0px;
+  }
+
+  .item .title {
+    width: 90%;
+    float:left;
+    font-weight: bold;
+  }
+  .item .time{
+    float:right;
+    margin-top:2px;
+    font-size: 10px;
+    color: #888;
+  }
+
+  #footer{
+    text-align: center;
+    color:#888;
+    font-size:12px;
+    padding:10px 0px;
+    background: #FEF0FF;
+  }
+
+
+  </style>
+
+</head>
+
+<body>
+
+  <ul id="nav">
+    <div class="container">
+      {% for link in links %}
+      <li {% if link == title %}class="active"{% endif %}><a href="/{{link}}.html">{{link}}</a></li>
+      {% endfor %}
+    </div>
+    <div style="clear:both"></div>
+  </ul><!--nav-->
+
+  <div id="header">
+    <div class='container'>
+      <span class="key">{{title|title}}</span>
+      <span class="time">{{updated_at}}</span>
+    </div>
+  </div><!--header-->
+
+  <div id="content">
+
+    {% for thread in threads %}
+    <div class="item">
+      <div class="container">
+        <a href='{{thread.link}}'>
+          <div class="title">{{thread.title}}</div>
+          <div class="time">{{thread.reply_number}}</div>
+          <div style="clear:both"></div>
+        </a>
+      </div>
+      <div style="clear:both"></div>
+    </div><!--item-->
+    {% endfor %}
+
+
+  </div><!--content-->
+  <div id="footer">
+    <div class="container">
+      <span>All right reserved. 2014-2015</span>
+    </div>
+  </div>
+</body>
+</html>

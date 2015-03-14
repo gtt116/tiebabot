@@ -8,3 +8,7 @@ def now():
 
 def now_unicode():
     return unicode(now())
+
+
+def now_short():
+    return datetime.datetime.now().strftime("%H:%M")

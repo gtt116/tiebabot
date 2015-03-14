@@ -10,6 +10,16 @@ body {
   background: #fff;
   box-shadow: 1px 1px 3px #BBB;
   border-radius: 3px;
+  display: block;
+  text-decoration: none;
+}
+
+.tieba:visited {
+  color: #e2e2e2;
+}
+
+.hover {
+  background: #efefef;
 }
 
 .background {
@@ -31,8 +41,4 @@ body {
   border-radius: 5px;
   z-index: 21;
   box-shadow: 0px 1px 1px #5F5E5E;
-}
-
-.refresh:hover .refresh:active .refresh:focus {
-  background-color: #f8f8f8;
 }

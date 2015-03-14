@@ -1,5 +1,8 @@
 import requests
+import logging
 from bs4 import BeautifulSoup
+
+LOG = logging.getLogger(__name__)
 
 
 class Tieba(object):
@@ -12,8 +15,13 @@ class Tieba(object):
     def read_page(self, page_number):
         """Returns the unicode of html content."""
         url = self.page_url(page_number)
-        resp = requests.get(url)
-        return resp.text
+        while True:
+            try:
+                resp = requests.get(url, timeout=3)
+            except Exception as ex:
+                LOG.warn("Read %s failed: %s, retry." % (url, ex))
+                continue
+            return resp.text
 
     def page_url(self, page_number):
         page = (int(page_number) - 1) * 50
