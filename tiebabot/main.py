@@ -13,7 +13,7 @@ LOG = logging.getLogger(__name__)
 
 
 class Scraper(object):
-    def __init__(self, names, target_dir, template_name, max_page=3):
+    def __init__(self, names, target_dir, template_name, max_page=2):
         self.names = names
         self.target_dir = target_dir
         self.template_name = template_name
