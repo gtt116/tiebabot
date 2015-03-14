@@ -24,7 +24,7 @@
     color:#888;
   }
   body{
-    font-size:14px;
+    font-size:15px;
   }
 
   #nav {
@@ -52,6 +52,7 @@
     padding: 10px 0;
     text-align: center;
     color:#fff;
+    box-shadow: 0px 0px 3px #C2C2C2;
   }
 
   #header .key{
@@ -73,18 +74,21 @@
   }
 
   .item {
-    border-bottom:1px solid #eee;
-    padding:12px 0px;
+    border-bottom: 1px solid #eee;
+    padding-top: 10px;
+    height: 42px;
+    line-height: 16px;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
 
   .item .title {
-    width: 90%;
-    float:left;
-    font-weight: bold;
+    width: 100%;
+    float: left;
   }
   .item .time{
-    float:right;
-    margin-top:2px;
+    float: right;
+    margin-top: 2px;
     font-size: 10px;
     color: #888;
   }
@@ -127,7 +131,7 @@
       <div class="container">
         <a href='{{thread.link}}'>
           <div class="title">{{thread.title}}</div>
-          <div class="time">{{thread.reply_number}}</div>
+          <!--<div class="time">{{thread.reply_number}}</div>-->
           <div style="clear:both"></div>
         </a>
       </div>
