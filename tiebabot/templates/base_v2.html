@@ -76,19 +76,23 @@
   .item {
     border-bottom: 1px solid #eee;
     padding-top: 10px;
-    height: 42px;
     line-height: 16px;
     text-overflow: ellipsis;
     overflow: hidden;
   }
 
   .item .title {
-    width: 100%;
     float: left;
+    height: 36px;
+    width: 100%;
   }
   .item .time{
     float: right;
-    margin-top: 2px;
+    font-size: 10px;
+    color: #888;
+  }
+  .item .author {
+    float:left;
     font-size: 10px;
     color: #888;
   }
@@ -131,7 +135,8 @@
       <div class="container">
         <a href='{{thread.link}}'>
           <div class="title">{{thread.title}}</div>
-          <!--<div class="time">{{thread.reply_number}}</div>-->
+          <div class="author">{{thread.author}}</div>
+          <div class="time">{{thread.reply_number}}</div>
           <div style="clear:both"></div>
         </a>
       </div>
