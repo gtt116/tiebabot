@@ -92,7 +92,7 @@ class Parser(object):
         except TypeError:
             link = ''
 
-        real_item = TiebaModel(reply_number, title, author, replier, link)
+        real_item = TiebaModel(reply_number, title, replier, author, link)
         real_item.raw_html = unicode(item)
         return real_item
 
