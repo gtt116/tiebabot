@@ -108,6 +108,45 @@
 
   </style>
 
+<script src="http://cdn.bootcss.com/hammer.js/2.0.3/hammer.min.js"></script>
+<script>
+window.onload = function() {
+
+  var goto = function(position) {
+    var nav = document.getElementById('nav');
+    var links = nav.getElementsByTagName('a');
+    
+    // Set default page to index 0;
+    var where = 0; 
+    for (var i = 0; i<links.length; i++){
+      if (window.location.pathname == encodeURI(links[i].getAttribute('href'))){
+        where = i; 
+        break;
+      }
+    }
+   
+    where += position;
+    if (where >= links.length){
+      // at the end
+      where = 0;
+    }
+    else if(where < 0){
+      where = links.length - 1;
+    }
+    window.location.href = links[where].getAttribute('href');
+  }
+
+  var content = document.getElementById('content'); 
+  var hm = new Hammer(content);
+  hm.on('swipeleft', function(event){
+      goto(1);
+  });
+  hm.on('swiperight', function(event){
+      goto(-1);
+  });
+}
+</script>
+
 </head>
 
 <body>
