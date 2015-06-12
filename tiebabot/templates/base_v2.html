@@ -133,6 +133,14 @@ window.onload = function() {
     else if(where < 0){
       where = links.length - 1;
     }
+
+    if (position > 0){
+      var title = '===>';
+    } else {
+      var title = '<===';
+    }
+
+    document.getElementById('title').innerHTML = title;
     window.location.href = links[where].getAttribute('href');
   }
 
@@ -162,7 +170,7 @@ window.onload = function() {
 
   <div id="header">
     <div class='container'>
-      <span class="key">{{title|title}}</span>
+      <span class="key" id="title">{{title|title}}</span>
       <span class="time">{{updated_at}}</span>
     </div>
   </div><!--header-->
