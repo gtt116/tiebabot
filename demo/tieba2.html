@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>{{ title }} - Tiebot </title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <link href="http://cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+  <style>
+  /* layout */
+  * {
+    margin: 0px;
+    padding: 0px;
+    font-size: 14px;
+  }
+  body {
+    background: #ECECEC
+  }
+  .container {
+    width: 96%;
+    margin: 0 auto;
+  }
+
+  #nav {
+    background: #00C73C;
+    height: 42px;
+  }
+
+  #nav a {
+    display: inline-block;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    width: 64px;
+    height: 42px;
+    line-height: 40px;
+  }
+
+  #nav a.active {
+    font-weight: bold;
+    color: #FFF;
+    background: #2AA24E;
+  }
+
+  #nav ul {
+    list-style: none;
+  }
+
+  #nav ul li {
+    display: inline;
+    width: 60px;
+    height: 42px;
+    padding-right: 10px;
+  }
+
+  #panel {
+    margin-top: 6px;
+    width: 100%;
+  }
+
+  #status-bar {
+  background: #FFF;
+  padding: 8px 0px;
+  }
+
+#status-bar span {
+  font-size: 12px;
+  margin-right: 10px;
+
+}
+.today {
+  color: #2AA24E;
+}
+
+#content {
+  margin-top: 1px; 
+}
+
+.thread {
+  background: #FFF;
+  margin-bottom: 1px;
+  padding: 8px 0px;
+}
+
+.new {
+  border-left: 3px solid #00C73C;
+}
+
+.old {
+  color: #AAA;
+}
+
+.title {
+  padding: 5px 0px 12px;
+  font-weight: bold;
+}
+.gallery img{
+  width: 140px;
+}
+.summary {
+  text-align: left;
+  padding-top: 10px;
+}
+.summary span {
+  font-size: 12px;
+  color: #8D8D8D;
+}
+
+.star {
+  margin-left: 60%;
+}
+.comment {
+  margin-left: 10px;
+}
+
+#load {
+  height: 40px;
+  text-align: center;
+  color: #353840;
+  line-height: 38px;
+}
+
+footer {
+  padding: 20px 0px;
+  height: 24px;
+  background: #353840;
+}
+
+footer p {
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+}
+
+#photo-box {
+  visibility: hidden;
+  text-align: center;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 10;
+  color: #FFF;
+}
+
+#photo-title {
+  padding: 8px 0px;
+}
+
+</style>
+</head>
+
+<body>
+
+	<div id="nav">
+		<div class="container">
+			<ul>
+				<li><a href="#" class="active">Apink</a></li>
+				<li><a href="#">郑恩地</a></li>
+				<li><a href="#">博美</a></li>
+			</ul>
+		</div>
+	</div><!-- nav -->
+
+
+	<div id="panel">
+
+    <div class="dragend-page">
+
+      <div id="status-bar" class="new">
+        <div class="container">
+          今: <span class="today">12</span>
+          <span>昨: 12</span>
+          <span>&nbsp; 刷：10 分钟前</span>
+        </div><! --container -->
+      </div><!--status-bar -->
+
+      <div id="content">
+        <div class="thread new">
+          <div class="container">
+            <div class="title">A°Pink┇150621图片┇150620饭绘娜恩相关1p</div>
+            <div class="gallery">
+              <a href="#">
+                <img data-width="500" data-height="566" src="http://imgsrc.baidu.com/forum/w%3D580/sign=31fcae51b7b7d0a27bc90495fbed760d/76d084ec8a136327fe1800d0948fa0ec09fac768.jpg" />
+              </a>
+              <a href="#">
+                <img data-width="500" data-height="500" src="http://imgsrc.baidu.com/forum/w%3D580/sign=31fcae51b7b7d0a27bc90495fbed760d/76d084ec8a136327fe1800d0948fa0ec09fac768.jpg" />
+              </a>
+              <a href="javascript: void(0);">
+                <img data-width="400" data-height="400" src="http://imgsrc.baidu.com/forum/w%3D580/sign=8e8aade7d12a283443a636036bb7c92e/9f16ab18367adab4a43ea6b98ed4b31c8601e46a.jpg" />
+              </a>
+            </div>
+            <div class="summary">
+              <span class="author">EN-BEE</span>
+              <span class="when">3 分钟前</span>
+              <span class="star"><i class="fa fa-star"></i>&nbsp; 30</span>
+              <span class="comment"><i class="fa fa-comment"></i>&nbsp; 2 </span>
+            </div> <!-- summary -->
+          </div><!--container-->
+        </div><!-- thread -->
+
+        <div class="thread old">
+          <div class="container">
+            <div class="title">A°Pink┇150621图片┇150620饭绘娜恩相关1p</div>
+            <div class="gallery">
+              <img src="#" />
+              <img src="#" />
+              <img src="#" />
+            </div>
+            <div class="summary">
+              <span class="author">EN-BEE</span>
+              <span class="when">3 分钟前</span>
+              <span class="star"><i class="fa fa-star"></i>&nbsp; 30</span>
+              <span class="comment"><i class="fa fa-comment"></i>&nbsp; 2 </span>
+            </div> <!-- summary -->
+          </div><!--container-->
+        </div><!-- thread -->
+
+        <div class="thread">
+          <div class="container">
+            <div class="title">A°Pink┇150621图片┇150620饭绘娜恩相关1p</div>
+            <p>
+              时尚达人的感觉
+              时尚达人的感觉
+              时尚达人的感觉
+              时尚达人的感觉
+            </p>
+            <div class="summary">
+              <span class="author">EN-BEE</span>
+              <span class="when">3 分钟前</span>
+              <span class="star"><i class="fa fa-star"></i>&nbsp; 30</span>
+              <span class="comment"><i class="fa fa-comment"></i>&nbsp; 2 </span>
+            </div> <!-- summary -->
+          </div><!--container-->
+        </div><!-- thread -->
+
+        <div class="thread">
+          <div class="container">
+            <div class="title">A°Pink┇150621图片┇150620饭绘娜恩相关1p</div>
+            <p>
+             <a href="#">呵呵</a>
+           </p>
+           <div class="summary">
+            <span class="author">EN-BEE</span>
+            <span class="when">3 分钟前</span>
+            <span class="star"><i class="fa fa-star"></i>&nbsp; 30</span>
+            <span class="comment"><i class="fa fa-comment"></i>&nbsp; 2 </span>
+          </div> <!-- summary -->
+        </div><!--container-->
+      </div><!-- thread -->
+
+      <div id="load">
+        加载更多
+      </div>
+    </div><!--content-->
+
+  </div><!--dragend-page-->
+
+  <div class="dragend-page">
+
+      <div id="status-bar" class="new">
+        <div class="container">
+          今: <span class="today">12</span>
+          <span>昨: 12</span>
+          <span>&nbsp; 刷：10 分钟前</span>
+        </div><! --container -->
+      </div><!--status-bar -->
+
+      <div id="content">
+
+        <div class="thread new">
+          <div class="container">
+            <div class="title">A°Pink┇150621图片┇150620饭绘娜恩相关1p</div>
+            <div class="gallery">
+              <img src="#" />
+              <img src="#" />
+              <img src="#" />
+            </div>
+            <div class="summary">
+              <span class="author">EN-BEE</span>
+              <span class="when">3 分钟前</span>
+              <span class="star"><i class="fa fa-star"></i>&nbsp; 30</span>
+              <span class="comment"><i class="fa fa-comment"></i>&nbsp; 2 </span>
+            </div> <!-- summary -->
+          </div><!--container-->
+        </div><!-- thread -->
+
+        <div class="thread old">
+          <div class="container">
+            <div class="title">A°Pink┇150621图片┇150620饭绘娜恩相关1p</div>
+            <div class="gallery">
+              <img src="#" />
+              <img src="#" />
+              <img src="#" />
+            </div>
+            <div class="summary">
+              <span class="author">EN-BEE</span>
+              <span class="when">3 分钟前</span>
+              <span class="star"><i class="fa fa-star"></i>&nbsp; 30</span>
+              <span class="comment"><i class="fa fa-comment"></i>&nbsp; 2 </span>
+            </div> <!-- summary -->
+          </div><!--container-->
+        </div><!-- thread -->
+
+        <div class="thread">
+          <div class="container">
+            <div class="title">A°Pink┇150621图片┇150620饭绘娜恩相关1p</div>
+            <p>
+              时尚达人的感觉
+              时尚达人的感觉
+              时尚达人的感觉
+              时尚达人的感觉
+            </p>
+            <div class="summary">
+              <span class="author">EN-BEE</span>
+              <span class="when">3 分钟前</span>
+              <span class="star"><i class="fa fa-star"></i>&nbsp; 30</span>
+              <span class="comment"><i class="fa fa-comment"></i>&nbsp; 2 </span>
+            </div> <!-- summary -->
+          </div><!--container-->
+        </div><!-- thread -->
+
+        <div class="thread">
+          <div class="container">
+            <div class="title">A°Pink┇150621图片┇150620饭绘娜恩相关1p</div>
+            <p>
+             <a href="#">呵呵</a>
+           </p>
+           <div class="summary">
+            <span class="author">EN-BEE</span>
+            <span class="when">3 分钟前</span>
+            <span class="star"><i class="fa fa-star"></i>&nbsp; 30</span>
+            <span class="comment"><i class="fa fa-comment"></i>&nbsp; 2 </span>
+          </div> <!-- summary -->
+        </div><!--container-->
+      </div><!-- thread -->
+
+      <div id="load">
+        加载更多
+      </div>
+    </div><!--content-->
+
+  </div><!--dragend-page-->
+
+   <div class="dragend-page">
+
+      <div id="status-bar" class="new">
+        <div class="container">
+          今: <span class="today">12</span>
+          <span>昨: 12</span>
+          <span>&nbsp; 刷：10 分钟前</span>
+        </div><! --container -->
+      </div><!--status-bar -->
+
+      <div id="content">
+        <div class="thread new">
+          <div class="container">
+            <div class="title">A°Pink┇150621图片┇150620饭绘娜恩相关1p</div>
+            <div class="gallery">
+              <a href="#">
+                <img data-width="500" data-height="566" src="http://imgsrc.baidu.com/forum/w%3D580/sign=31fcae51b7b7d0a27bc90495fbed760d/76d084ec8a136327fe1800d0948fa0ec09fac768.jpg" />
+              </a>
+              <a href="#">
+                <img data-width="500" data-height="500" src="http://imgsrc.baidu.com/forum/w%3D580/sign=31fcae51b7b7d0a27bc90495fbed760d/76d084ec8a136327fe1800d0948fa0ec09fac768.jpg" />
+              </a>
+              <a href="javascript: void(0);">
+                <img data-width="400" data-height="400" src="http://imgsrc.baidu.com/forum/w%3D580/sign=8e8aade7d12a283443a636036bb7c92e/9f16ab18367adab4a43ea6b98ed4b31c8601e46a.jpg" />
+              </a>
+            </div>
+            <div class="summary">
+              <span class="author">EN-BEE</span>
+              <span class="when">3 分钟前</span>
+              <span class="star"><i class="fa fa-star"></i>&nbsp; 30</span>
+              <span class="comment"><i class="fa fa-comment"></i>&nbsp; 2 </span>
+            </div> <!-- summary -->
+          </div><!--container-->
+        </div><!-- thread -->
+
+        <div class="thread old">
+          <div class="container">
+            <div class="title">A°Pink┇150621图片┇150620饭绘娜恩相关1p</div>
+            <div class="gallery">
+              <img src="#" />
+              <img src="#" />
+              <img src="#" />
+            </div>
+            <div class="summary">
+              <span class="author">EN-BEE</span>
+              <span class="when">3 分钟前</span>
+              <span class="star"><i class="fa fa-star"></i>&nbsp; 30</span>
+              <span class="comment"><i class="fa fa-comment"></i>&nbsp; 2 </span>
+            </div> <!-- summary -->
+          </div><!--container-->
+        </div><!-- thread -->
+
+        <div class="thread">
+          <div class="container">
+            <div class="title">A°Pink┇150621图片┇150620饭绘娜恩相关1p</div>
+            <p>
+              时尚达人的感觉
+              时尚达人的感觉
+              时尚达人的感觉
+              时尚达人的感觉
+            </p>
+            <div class="summary">
+              <span class="author">EN-BEE</span>
+              <span class="when">3 分钟前</span>
+              <span class="star"><i class="fa fa-star"></i>&nbsp; 30</span>
+              <span class="comment"><i class="fa fa-comment"></i>&nbsp; 2 </span>
+            </div> <!-- summary -->
+          </div><!--container-->
+        </div><!-- thread -->
+
+        <div class="thread">
+          <div class="container">
+            <div class="title">A°Pink┇150621图片┇150620饭绘娜恩相关1p</div>
+            <p>
+             <a href="#">呵呵</a>
+           </p>
+           <div class="summary">
+            <span class="author">EN-BEE</span>
+            <span class="when">3 分钟前</span>
+            <span class="star"><i class="fa fa-star"></i>&nbsp; 30</span>
+            <span class="comment"><i class="fa fa-comment"></i>&nbsp; 2 </span>
+          </div> <!-- summary -->
+        </div><!--container-->
+      </div><!-- thread -->
+
+      <div id="load">
+        加载更多
+      </div>
+    </div><!--content-->
+
+  </div><!--dragend-page-->
+</div> <!--panel-->
+
+
+<footer>
+ <p>ⓒ 2015 Gtt116 - Apink Zang! </p>
+</footer>
+
+<!-- start of photoswipe -->
+<link href="http://cdn.bootcss.com/photoswipe/4.0.8/default-skin/default-skin.css" rel="stylesheet">
+<link href="http://cdn.bootcss.com/photoswipe/4.0.8/photoswipe.css" rel="stylesheet">
+<script src="http://cdn.bootcss.com/photoswipe/4.0.8/photoswipe.min.js"></script>
+<script src="http://cdn.bootcss.com/photoswipe/4.0.8/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element, as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+        <div class="pswp__container">
+            <!-- don't modify these 3 pswp__item elements, data is added later on -->
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+          </div>
+
+        </div>
+
+</div>
+
+<!-- The end of photoswipe-->
+
+<script src="./dragend.min.js"></script>
+<script>
+
+function showGallery(){
+  /*
+    The structure of DOM is
+    .gallery>a>img [data-width] [data-height]
+  */
+  var index = 0;  // the default image index
+  var items = [];
+  var links = this.parentElement.getElementsByTagName('a');
+
+  // Find out index and build `items`.
+  for (var i = 0 ; i < links.length ; i++) {
+
+    if (links[i] === this){
+      index = i;
+    }
+
+    var my_img = links[i].getElementsByTagName('img')[0];
+    var item = {
+      src: my_img.attributes['src'].textContent,
+      w: my_img.attributes['data-width'].textContent,
+      h: my_img.attributes['data-height'].textContent,
+    };
+    items.push(item);
+  }
+  console.debug(items);
+
+  var pswpElement = document.querySelectorAll('.pswp')[0];
+
+  var options = {
+      index: index, // start at first slide
+  };
+
+  // Initializes and opens PhotoSwipe
+  var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+  gallery.init();
+  return false;
+}
+
+window.onload = function() {
+
+  function set_nav_active( index ) {
+      nav_items = document.getElementById('nav').getElementsByTagName('a');
+      for (var i = 0; i< nav_items.length; i++) {
+        nav_items[i].className = "";
+      }
+      nav_items[index].className = 'active';
+  }
+
+  new Dragend(document.getElementById("panel"), {
+    duration: 80,
+    afterInitialize: function() {
+      this.container.style.visibility = "visible";
+      this.container.style.overflow = "initial";
+      this.container.style.overflowX = "hidden";
+    },
+
+    onSwipeEnd: function() {
+      var first = this.pages[0],
+      last = this.pages[this.pages.length - 1];
+      set_nav_active(this.page);
+      console.log(event);
+    }
+  });
+
+  /* Set image to open photoswipe */
+  imgs = document.querySelectorAll('.gallery a');
+  for (var i = 0 ; i < imgs.length ; i++) {
+    imgs[i].onclick = showGallery;
+  }
+  
+}
+</script>
+</body>
+</html>
