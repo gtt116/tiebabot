@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<title>{{ title|title }} - Tiebabot</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <link href="/css/global.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+	<div id="nav">
+		<div class="container">
+			<ul>
+      {% for link in links %}
+      <li {% if link == title %}class="active"{% endif %}><a href="/{{link}}.html">{{link}}</a></li>
+      {% endfor %}
+			</ul>
+		</div>
+	</div><!-- nav -->
+
+
+	<div id="panel">
+
+    <div class="dragend-page">
+
+      <div id="status-bar">
+        <div class="container">
+          今: <span class="today">12</span>
+          <span>昨: 12</span>
+          <span>&nbsp; 刷：10 分钟前</span>
+        </div><! --container -->
+      </div><!--status-bar -->
+
+      <div id="content">
+        <div class="thread new">
+          <div class="container">
+            <a href="#">
+              <div class="title">A°Pink┇150621图片┇150620饭绘娜恩相关1p</div>
+
+              <p>
+                时尚达人的感觉
+                时尚达人的感觉
+                时尚达人的感觉
+                时尚达人的感觉
+              </p>
+              <div class="summary">
+                <span class="author">EN-BEE</span>
+                <span class="when">3 分钟前</span>
+                <span class="star"><i class="fa fa-star"></i>&nbsp; 30</span>
+                <span class="comment"><i class="fa fa-comment"></i>&nbsp; 2 </span>
+              </div> <!-- summary -->
+            </div><!--container-->
+          </a>
+        </div><!-- thread -->
+
+        <div class="thread old">
+          <div class="container">
+            <div class="title">A°Pink┇150621图片┇150620饭绘娜恩相关1p</div>
+            <p>
+              时尚达人的感觉
+              时尚达人的感觉
+              时尚达人的感觉
+              时尚达人的感觉
+              <a href="#">呵呵</a>
+            </p>
+            <div class="summary">
+              <span class="author">EN-BEE</span>
+              <span class="when">3 分钟前</span>
+              <span class="star"><i class="fa fa-star"></i>&nbsp; 30</span>
+              <span class="comment"><i class="fa fa-comment"></i>&nbsp; 2 </span>
+            </div> <!-- summary -->
+          </div><!--container-->
+        </div><!-- thread -->
+
+      <div class="thread">
+          <div class="container">
+            <div class="title">A°Pink┇150621图片┇150620饭绘娜恩相关1p</div>
+            <p>
+              时尚达人的感觉
+              时尚达人的感觉
+              时尚达人的感觉
+              时尚达人的感觉
+              <a href="#">呵呵</a>
+            </p>
+            <div class="summary">
+              <span class="author">EN-BEE</span>
+              <span class="when">3 分钟前</span>
+              <span class="star"><i class="fa fa-star"></i>&nbsp; 30</span>
+              <span class="comment"><i class="fa fa-comment"></i>&nbsp; 2 </span>
+            </div> <!-- summary -->
+          </div><!--container-->
+        </div><!-- thread -->
+
+      <!--<div id="load">
+        加载更多
+      </div>-->
+    </div><!--content-->
+
+  </div><!--dragend-page-->
+</div> <!--panel-->
+
+<div id="to_right" class="indicator"></div>
+
+<div id="to_left" class="indicator"></div>
+
+<footer>
+ <p>&copy; 2015 Gtt116 - Apink Zang! </p>
+</footer>
+
+<script src="/js/global.js"></script>
+<script>
+window.onload = on_load;
+</script>
+</body>
+</html>

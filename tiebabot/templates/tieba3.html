@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<title>{{ title|title }} - Tiebabot</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <link href="/css/global.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+	<div id="nav">
+		<div class="container">
+			<ul>
+      {% for link in links %}
+        <li><a {% if link == title %}class="active"{% endif %} href="/{{link}}.html">{{link|title}}</a></li>
+      {% endfor %}
+			</ul>
+		</div>
+	</div><!-- nav -->
+
+
+	<div id="panel">
+
+    <div class="dragend-page">
+
+      <div id="status-bar">
+        <div class="container">
+          今: <span class="today">12</span>
+          <span>昨: 12</span>
+          <span>&nbsp; 刷：{{updated_at}}</span>
+        </div><! --container -->
+      </div><!--status-bar -->
+
+      <div id="content">
+        {% for thread in threads %}
+        <div class="thread">
+          <div class="container">
+            <a href="{{ thread.link }}">
+              <div class="title">{{ thread.title }}</div>
+              <p>
+              </p>
+              <div class="summary">
+                <span class="author">{{ thread.author }}</span>
+                <!--<span class="star"><i class="fa fa-star"></i>&nbsp; 30</span>-->
+                <span class="comment"><i class="fa fa-comment"></i>&nbsp; {{ thread.reply_number }} </span>
+              </div> <!-- summary -->
+            </a>
+          </div><!--container-->
+        </div><!-- thread -->
+        {% endfor %}
+
+      <!--<div id="load">
+        加载更多
+      </div>-->
+    </div><!--content-->
+
+  </div><!--dragend-page-->
+</div> <!--panel-->
+
+<div id="to_right" class="indicator"></div>
+
+<div id="to_left" class="indicator"></div>
+
+<footer>
+ <p>&copy; 2015 Gtt116 - Apink Zang! </p>
+</footer>
+
+<script src="/js/global.js"></script>
+<script>
+window.onload = on_load;
+</script>
+</body>
+</html>

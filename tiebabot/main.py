@@ -62,4 +62,4 @@ if __name__ == '__main__':
     logging.basicConfig()
     LOG.setLevel(logging.DEBUG)
     titles = [u'apink', u'郑恩智', u'尹宝美', u'朴初珑', u'cnblue']
-    Scraper(titles, TARGET_DIR, 'base_v2.html').process()
+    Scraper(titles, TARGET_DIR, 'tieba3.html').process()
