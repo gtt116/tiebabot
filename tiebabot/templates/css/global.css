@@ -5,6 +5,7 @@
   font-size: 14px;
 }
 body {
+  font-family: sans-serif;
   background: #ECECEC
 }
 .container {
@@ -68,7 +69,7 @@ body {
   padding: 8px 0px;
 }
 .thread a{
-  color: #000;
+  color: #8D8D8D;
   text-decoration: none;
 }
 
@@ -78,6 +79,10 @@ body {
 
 .new {
   border-left: 6px solid #00C73C;
+}
+
+.new a {
+  color: #000;
 }
 
 .old {

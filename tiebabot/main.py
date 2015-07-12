@@ -61,5 +61,5 @@ class Scraper(object):
 if __name__ == '__main__':
     logging.basicConfig()
     LOG.setLevel(logging.DEBUG)
-    titles = [u'apink', u'郑恩智', u'尹宝美', u'金素贤']
+    titles = [u'apink', u'郑恩智', u'尹宝美', u'supergirls', u'iu', u'金素贤']
     Scraper(titles, TARGET_DIR, 'tieba3.html').process()
