@@ -170,3 +170,35 @@ footer p {
 #to_right {
   right: 0px;
 }
+
+#to_top, #refresh {
+  position: fixed;
+  right: 10px;
+  bottom: 25px;
+  text-align:center;
+  z-index: 20;
+}
+
+#refresh{
+  bottom: 80px;!important
+}
+
+#to_top a{
+  opacity: 0.5;
+  background: #000;
+  padding: 17px;
+  color: #FFF;
+  text-decoration: none;
+}
+
+#refresh a{
+  opacity: 0.5;
+  background: #000;
+  padding: 18px;
+  color: #FFF;
+  text-decoration: none;
+}
+
+#to_top a:hover, #refresh a:hover{
+  background: #00C73C;
+}
